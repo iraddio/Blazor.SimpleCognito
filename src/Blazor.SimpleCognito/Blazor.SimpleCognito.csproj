@@ -12,7 +12,7 @@
 
     <!-- NuGet settings -->
     <PackageId>Blazor.SimpleCognito</PackageId>
-    <Version>0.3.0</Version>
+    <Version>0.4.0</Version>
     <PackageTags>XTriode;Blazor;Razor;Components;AWS;Cognito;ASP.NET Core;CSharp;Web</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/XTriode/Blazor.SimpleCognito</PackageProjectUrl>
@@ -27,8 +27,6 @@
   <ItemGroup>
     <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.7.0.21" />
     <PackageReference Include="Blazored.LocalStorage" Version="4.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.15" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.15" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.1" />
   </ItemGroup>
 
