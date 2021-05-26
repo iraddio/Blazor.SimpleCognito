@@ -1,0 +1,14 @@
+@inject ICognitoAuthenticationService auth
+@inject NavigationManager Navigation
+
+@code {
+
+    protected async override Task OnInitializedAsync()
+    {
+        var authenticatedResult = await auth.isAuthenticated();
+
+        if(!authenticatedResult) {
+            Navigation.NavigateTo(CognitoConfig.URL_LOGIN);
+        }
+    }
+}

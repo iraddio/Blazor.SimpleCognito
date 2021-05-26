@@ -1,0 +1,25 @@
+@page "/authentication/{action}"
+
+@inject NavigationManager Navigation
+@inject ICognitoAuthenticationService auth
+@inject ILocalStorageService localStorage
+
+@code {
+    [Parameter] public string Action { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {    
+        if(Action.Equals("login-callback")) {
+            string id_token = Navigation.Fragment("#id_token");
+            Console.WriteLine(id_token);
+            auth.Credentials.AddLogin(CognitoConfig.COGNITO_IDP, id_token);
+            await localStorage.SetItemAsStringAsync("id_token", id_token);
+            Navigation.NavigateTo("/");
+        }
+        if(Action.Equals("logout-callback")) {
+            auth.Credentials.ClearCredentials();
+            await localStorage.RemoveItemAsync("id_token");
+            Navigation.NavigateTo("/");
+        }
+    }
+}
