@@ -21,7 +21,9 @@ namespace Blazor.SimpleCognito.Helpers
 
         public static NameValueCollection Fragment(this NavigationManager navigationManager)
         {
-            return HttpUtility.ParseQueryString(new Uri(navigationManager.Uri).Fragment);
+            string fragment = new Uri(navigationManager.Uri).Fragment;
+            string query = fragment.Substring(1);
+            return HttpUtility.ParseQueryString(query);
         }
 
         // get single querystring value with specified key

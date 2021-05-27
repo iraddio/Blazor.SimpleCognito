@@ -36,7 +36,7 @@ namespace Blazor.SimpleCognito
                 Credentials.AddLogin(CognitoConfig.COGNITO_IDP, id_token);
                 var credential = await Credentials.GetCredentialsAsync();
                 Console.WriteLine("user authenticated ....");
-                Console.WriteLine("accesskey: " + credential.AccessKey);
+                //Console.WriteLine("accesskey: " + credential.AccessKey);
                 return true;
             } catch (NotAuthorizedException ex) {
                 Console.WriteLine(ex);
